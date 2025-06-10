@@ -1,7 +1,11 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+import localMailIcon from '../../public/mail-icon.png';
+import localGithubIcon from '../../public/github-icon.png';
+import localLinkedInIcon from '../../public/linkedin-icon.png';
+
 // Component Imports
-import Button from '../components/Button.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -13,13 +17,43 @@ import Button from '../components/Button.astro';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
+		<title>Krzysztof Kiełek</title>
 	</head>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
+	<body class="bg-slate-950 text-white flex flex-col items-center justify-between p-5 h-screen">
+		<nav class="rounded-4xl p-0.5 bg-stone-300 text-slate-500">
+			<ul class="flex flex-row gap-10 mx-3 p-2">
+				<li class="rounded-3xl px-2 py-1 hover:text-slate-900 transition-all duration-500 hover:bg-stone-200">
+					<a href="#home">Home</a>
+				</li>
+				<li class="rounded-3xl px-2 py-1 hover:text-slate-900 transition-all duration-500 hover:bg-stone-200">
+					<a href="#experience">Experience</a>
+				</li>
+				<li class="rounded-3xl px-2 py-1 hover:text-slate-900 transition-all duration-500 hover:bg-stone-200">
+					<a href="#education">Education</a>
+				</li>
+				<li class="rounded-3xl px-2 py-1 hover:text-slate-900 transition-all duration-500 hover:bg-stone-200">
+					<a href="#skills">Skills</a>
+				</li>
+				<li class="rounded-3xl px-2 py-1 hover:text-slate-900 transition-all duration-500 hover:bg-stone-200">
+					<a href="#contact">Contact</a>
+				</li>
+			</ul>
+		</nav>
+		<footer id=contact class="flex flex-col p-0.5">
+			<div class="flex flex-row justify-left gap-5 p-2">
+				<a href="mailto:krzysztof.piotr.kielek@gmail.com">
+					<Image src={localMailIcon} alt="Mail Icon" height="24px" />
+				</a>
+				<a href="http://www.github.com/keteik" target="_blank" rel="noopener noreferrer">
+					<Image src={localGithubIcon} alt="Github Icon" height="24px"/>
+				</a>
+				<a href="https://www.linkedin.com/in/krzysztof-kielek/" target="_blank" rel="noopener noreferrer">
+				<Image src={localLinkedInIcon} alt="LinkedIn Icon" height="24px"/>
+				</a>
+			</div>
+			<p class="text-center text-sm text-slate-500">
+				&copy; {new Date().getFullYear()} Krzysztof Kiełek. All rights reserved.
+			</p>
 	</body>
 </html>
