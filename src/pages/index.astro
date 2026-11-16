@@ -1,481 +1,65 @@
 ---
 import "../styles/global.css";
-import { Image } from "astro:assets";
-import favicon from "../img/favicon.svg";
-
-import localMailIcon from "../img/mail-icon.png";
-import localLinkedInIcon from "../img/linkedin-icon.png";
-import localGithubIcon from "../img/github-icon.png";
-
-import localJsIcon from "../img/js-icon.png";
-import localTsIcon from "../img/ts-icon.png";
-import localTailwindIcon from "../img/tailwind-icon.png";
-import localReactIcon from "../img/react-icon.png";
-import localAstroIcon from "../img/astro-icon.png";
-import localNestIcon from "../img/nest-icon.png";
-import localExpressIcon from "../img/express-icon.png";
-import localDockerIcon from "../img/docker-icon.png";
-import localMySQLIcon from "../img/mysql-icon.png";
-import localMariaDBIcon from "../img/mariadb-icon.png";
-import localMongoDBIcon from "../img/mongodb-icon.png";
-import localNodeIcon from "../img/node-icon.png";
-import localGitIcon from "../img/git-icon.png";
-import localFastifyIcon from "../img/fastify-icon.svg";
-import localPostgresIcon from "../img/postgres-icon.svg";
 
 const email = "krzysztof.piotr.kielek@gmail.com";
 const github = "https://www.github.com/keteik";
 const linkedin = "https://www.linkedin.com/in/krzysztof-kielek/";
-
-const experience = [
-  {
-    type: "work",
-    role: "Software Engineer",
-    badge: "Present",
-    period: "2022 — Present",
-    desc: "Developed, tested, and maintained software applications in collaboration with cross-functional teams. Participated in the full software development lifecycle (SDLC), from requirements analysis to deployment and support. Focused on writing clean, efficient, and scalable code aligned with best practices.",
-  },
-  {
-    type: "work",
-    role: "IT Support Specialist",
-    period: "2021 — 2022",
-    desc: "Provided technical assistance and support to end users on hardware, software, and network issues. Diagnosed problems, installed and configured systems, and ensured smooth day-to-day IT operations. Collaborated with other IT teams to escalate and resolve complex issues.",
-  },
-  {
-    type: "edu",
-    role: "Bachelor of Engineering, Information Technology",
-    period: "2017 — 2022",
-    desc: "A 4.5-year engineering program covering programming, computer networks, databases, software engineering, algorithms, cybersecurity, and systems analysis. Gained hands-on experience through lab classes, team projects, and an engineering thesis.",
-  },
-];
-
-const skillGroups = [
-  {
-    title: "Languages",
-    items: [
-      { icon: localJsIcon, name: "JavaScript" },
-      { icon: localTsIcon, name: "TypeScript" },
-    ],
-  },
-  {
-    title: "Frontend",
-    items: [
-      { icon: localReactIcon, name: "React" },
-      { icon: localTailwindIcon, name: "Tailwind CSS" },
-      { icon: localAstroIcon, name: "Astro" },
-    ],
-  },
-  {
-    title: "Backend",
-    items: [
-      { icon: localNodeIcon, name: "Node.js" },
-      { icon: localNestIcon, name: "NestJS" },
-      { icon: localExpressIcon, name: "Express" },
-      { icon: localFastifyIcon, name: "Fastify" },
-    ],
-  },
-  {
-    title: "Databases",
-    items: [
-      { icon: localPostgresIcon, name: "PostgreSQL" },
-      { icon: localMySQLIcon, name: "MySQL" },
-      { icon: localMariaDBIcon, name: "MariaDB" },
-      { icon: localMongoDBIcon, name: "MongoDB" },
-    ],
-  },
-  {
-    title: "Tools & DevOps",
-    items: [
-      { icon: localDockerIcon, name: "Docker" },
-      { icon: localGitIcon, name: "Git" },
-    ],
-  },
-];
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <link rel="icon" href="data:," />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap"
       rel="stylesheet"
     />
-    <title>Krzysztof Kiełek — Software Engineer</title>
+    <title>Krzysztof Kiełek, software engineer</title>
     <meta
       name="description"
-      content="Krzysztof Kiełek — Software Engineer focused on web development and security. Experienced across the full SDLC with JavaScript, TypeScript, React, Node.js and more."
+      content="Krzysztof Kiełek builds web applications and backend services in TypeScript."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Krzysztof Kiełek — Software Engineer" />
+    <meta property="og:title" content="Krzysztof Kiełek, software engineer" />
     <meta
       property="og:description"
-      content="Software Engineer focused on web development and security."
+      content="Web applications and backend services in TypeScript."
     />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Krzysztof Kiełek — Software Engineer" />
-    <meta
-      name="twitter:description"
-      content="Software Engineer focused on web development and security."
-    />
   </head>
 
-  <body
-    class="relative min-h-screen bg-slate-950 text-slate-300 antialiased selection:bg-blue-500/30 selection:text-white"
-  >
-    <!-- ambient background -->
-    <div
-      aria-hidden="true"
-      class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
-    >
-      <div
-        class="absolute -top-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-blue-600/20 blur-[120px]"
-      >
-      </div>
-      <div
-        class="absolute bottom-0 right-0 h-[28rem] w-[28rem] translate-x-1/3 translate-y-1/3 rounded-full bg-indigo-700/15 blur-[120px]"
-      >
-      </div>
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.06)_1px,transparent_0)] [background-size:32px_32px]"
-      >
-      </div>
-    </div>
+  <body>
+    <main class="page">
+      <h1>Krzysztof Kiełek</h1>
 
-    <!-- nav -->
-    <header
-      class="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-md"
-    >
-      <nav
-        class="mx-auto flex h-16 w-full max-w-4xl items-center justify-between px-5"
-        aria-label="Primary"
-      >
-        <a
-          href="#home"
-          class="flex items-center gap-2 font-bold text-white transition-colors hover:text-blue-400"
-        >
-          <span
-            class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-sm font-extrabold text-white shadow-lg shadow-blue-500/20"
-            >KK</span
-          >
-          <span class="hidden sm:inline">Krzysztof Kiełek</span>
-        </a>
-        <ul class="flex items-center gap-1 text-sm font-medium sm:gap-2">
-          <li>
-            <a
-              href="#experience"
-              class="rounded-lg px-3 py-2 text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
-              >Experience</a
-            >
-          </li>
-          <li>
-            <a
-              href="#skills"
-              class="rounded-lg px-3 py-2 text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
-              >Skills</a
-            >
-          </li>
-          <li>
-            <a
-              href={`mailto:${email}`}
-              class="ml-1 rounded-lg bg-white/10 px-3 py-2 text-white transition-colors hover:bg-white/20"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+      <p>
+        I'm a software engineer. The things I keep coming back to are how
+        software is built, how it gets broken into, and how the networks
+        underneath it all actually work.
+      </p>
+      <p>
+        I got here through an IT engineering degree and a year of fixing
+        other people's computers, which is still a good way to learn how
+        things break.
+      </p>
+      <p>
+        If you want to talk, email works best. My code is on GitHub, and the
+        CV is on LinkedIn.
+      </p>
 
-    <main class="mx-auto w-full max-w-4xl px-5">
-      <!-- hero -->
-      <section
-        id="home"
-        aria-label="Introduction"
-        class="flex min-h-[calc(100vh-4rem)] flex-col justify-center py-20"
-      >
-        <div class="reveal">
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300"
-          >
-            <span class="relative flex h-2 w-2">
-              <span
-                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
-              ></span>
-              <span
-                class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"
-              ></span>
-            </span>
-            Open to new opportunities
-          </span>
-        </div>
+      <p class="contact">
+        <a href={`mailto:${email}`}>{email}</a>
+        <span aria-hidden="true">/</span>
+        <a href={github} rel="noopener noreferrer">GitHub</a>
+        <span aria-hidden="true">/</span>
+        <a href={linkedin} rel="noopener noreferrer">LinkedIn</a>
+      </p>
 
-        <h1
-          class="reveal mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-6xl"
-          style="--reveal-delay: 80ms"
-        >
-          Hi, I'm Krzysztof Kiełek
-          <span class="ml-1 inline-block origin-bottom-right">👋</span>
-        </h1>
-
-        <p
-          class="reveal mt-4 max-w-2xl text-lg text-slate-400 sm:text-xl"
-          style="--reveal-delay: 160ms"
-        >
-          <span
-            class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text font-semibold text-transparent"
-            >Software Engineer</span
-          > with a passion for technology and problem-solving. Focused on web development
-          and security — building clean, efficient, and scalable software.
-        </p>
-
-        <div
-          class="reveal mt-8 flex flex-wrap items-center gap-3"
-          style="--reveal-delay: 240ms"
-        >
-          <a
-            href={`mailto:${email}`}
-            class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-transform hover:-translate-y-0.5"
-          >
-            <svg
-              class="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              ></path>
-            </svg>
-            Get in touch
-          </a>
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-          >
-            <svg
-              class="h-4 w-4"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0024 12.5C24 5.87 18.63.5 12 .5z"
-              ></path>
-            </svg>
-            View GitHub
-          </a>
-          <div class="ml-1 flex items-center gap-1">
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn profile"
-              class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-            >
-              <Image src={localLinkedInIcon} alt="" height={20} />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- experience -->
-      <section
-        id="experience"
-        aria-labelledby="experience-heading"
-        class="py-20"
-      >
-        <div class="reveal mb-10">
-          <p
-            class="text-sm font-semibold uppercase tracking-widest text-blue-400"
-          >
-            Career
-          </p>
-          <h2
-            id="experience-heading"
-            class="mt-1 text-3xl font-bold text-white"
-          >
-            Experience & Education
-          </h2>
-        </div>
-
-        <ol class="relative border-s border-white/10">
-          {
-            experience.map((item, i) => (
-              <li
-                class="reveal mb-10 ms-6 last:mb-0"
-                style={`--reveal-delay: ${i * 100}ms`}
-              >
-                <span class="absolute -start-3 grid h-6 w-6 place-items-center rounded-full bg-blue-600 ring-8 ring-slate-950">
-                  {item.type === "edu" ? (
-                    <svg
-                      class="h-3 w-3 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
-                    </svg>
-                  ) : (
-                    <svg
-                      class="h-3 w-3 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      aria-hidden="true"
-                    >
-                      <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Z" />
-                    </svg>
-                  )}
-                </span>
-                <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 transition-colors hover:border-blue-500/30 hover:bg-white/[0.05]">
-                  <div class="flex flex-wrap items-center gap-3">
-                    <h3 class="text-lg font-semibold text-white">
-                      {item.role}
-                    </h3>
-                    {item.badge && (
-                      <span class="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-medium text-blue-300 ring-1 ring-inset ring-blue-500/30">
-                        {item.badge}
-                      </span>
-                    )}
-                  </div>
-                  <time class="mt-1 block text-sm font-medium text-slate-500">
-                    {item.period}
-                  </time>
-                  <p class="mt-3 text-sm leading-relaxed text-slate-400">
-                    {item.desc}
-                  </p>
-                </div>
-              </li>
-            ))
-          }
-        </ol>
-      </section>
-
-      <!-- skills -->
-      <section id="skills" aria-labelledby="skills-heading" class="py-20">
-        <div class="reveal mb-10">
-          <p
-            class="text-sm font-semibold uppercase tracking-widest text-blue-400"
-          >
-            Toolbox
-          </p>
-          <h2 id="skills-heading" class="mt-1 text-3xl font-bold text-white">
-            Technologies I use
-          </h2>
-          <p class="mt-2 max-w-2xl text-sm text-slate-400">
-            Tools and frameworks I work with day to day. I'm always eager to
-            learn new ones to deliver better solutions.
-          </p>
-        </div>
-
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {
-            skillGroups.map((group, i) => (
-              <div
-                class="reveal rounded-2xl border border-white/5 bg-white/[0.03] p-5"
-                style={`--reveal-delay: ${i * 80}ms`}
-              >
-                <h3 class="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-500">
-                  {group.title}
-                </h3>
-                <ul class="flex flex-wrap gap-2.5">
-                  {group.items.map((skill) => (
-                    <li class="inline-flex items-center gap-2 rounded-lg border border-white/5 bg-slate-900/60 px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:border-blue-500/40 hover:text-white">
-                      <Image
-                        src={skill.icon}
-                        alt=""
-                        height={20}
-                        class="h-5 w-5 object-contain"
-                      />
-                      {skill.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
-        </div>
-      </section>
+      <footer class="meta">© {year}</footer>
     </main>
-
-    <!-- footer -->
-    <footer id="footer" class="border-t border-white/5">
-      <div
-        class="mx-auto flex w-full max-w-4xl flex-col items-center gap-6 px-5 py-10 sm:flex-row sm:justify-between"
-      >
-        <div class="flex items-center gap-3">
-          <span class="text-sm text-slate-500">Let's connect:</span>
-          <a
-            href={`mailto:${email}`}
-            aria-label="Email Krzysztof Kiełek"
-            class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 transition-colors hover:bg-white/10"
-          >
-            <Image src={localMailIcon} alt="" height={20} />
-          </a>
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 transition-colors hover:bg-white/10"
-          >
-            <Image src={localGithubIcon} alt="" height={20} />
-          </a>
-          <a
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 transition-colors hover:bg-white/10"
-          >
-            <Image src={localLinkedInIcon} alt="" height={20} />
-          </a>
-        </div>
-        <p class="text-center text-sm text-slate-500 sm:text-right">
-          &copy; <span id="year"></span> Krzysztof Kiełek. All rights reserved.
-          <br class="hidden sm:block" />
-          Icons by
-          <a
-            href="https://icons8.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-blue-400 hover:underline">Icons8</a
-          >.
-        </p>
-      </div>
-    </footer>
-
-    <script is:inline>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      const items = document.querySelectorAll(".reveal");
-      if (
-        "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ) {
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                io.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12 },
-        );
-        items.forEach((el) => io.observe(el));
-      } else {
-        items.forEach((el) => el.classList.add("is-visible"));
-      }
-    </script>
   </body>
 </html>
